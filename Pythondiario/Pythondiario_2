@@ -1,0 +1,210 @@
+import os
+os.system('cls')
+from datetime import datetime
+from datetime import timedelta
+
+"""ejercicios sacados de https://pythondiario.com/2013/05/ejercicios-en-python-parte-2.html
+
+Ejercicio 1
+La función max() del ejercicio 1 (primera parte)
+ y la función max_de_tres() del ejercicio 2 (primera parte),
+ solo van a funcionar para 2 o 3 números.
+Supongamos que tenemos mas de 3 números o no sabemos cuantos números son.
+Escribir una función max_in_list() que tome una lista de números y devuelva el mas grande.
+
+"""
+print("EJERCICIO 1")
+lista_num = [1,5,8,6,9,2,15,32,65,15,98,50,0,12]
+def max_in_list(lista_num:list)->int:
+    num_max = 0
+    for i in lista_num:
+        if i>num_max:
+            num_max = i
+    return num_max
+print("El número más alto es:",max_in_list(lista_num))
+
+
+
+"""
+
+Ejercicio 2
+Escribir una función mas_larga() que tome una lista de palabras y devuelva la mas larga.
+"""
+lista_palabras = ["pera","manzana","aguacate","tomate","melocotón","naranja","mandarina","albaricoque","limón","ciruela"]
+print("\nEJERCICIO 2")
+def mas_larga(lista_palabras:list)->str:
+    palabra_max = ""
+    for i in lista_palabras:
+        if len(i)>len(palabra_max):
+            palabra_max = i
+    return palabra_max
+print("La palabra más larga es:",mas_larga(lista_palabras))
+
+
+
+
+"""
+Ejercicio 3
+Escribir una función filtrar_palabras() que tome una lista de palabras y un entero n,
+ y devuelva las palabras que tengan mas de n caracteres.
+"""
+print("\nEJERCICIO 3")
+num=6
+def filtrar_palabras(lista_palabras:list, num:int):
+    lista_palabras_largas = []
+    for i in lista_palabras:
+        if len(i)>num:
+            lista_palabras_largas.append(i)
+    print(" , ".join(lista_palabras_largas))
+
+print(f"Las palabras que tienen más de {num} caracteres son:")
+filtrar_palabras(lista_palabras,num)
+
+
+
+"""
+Ejercicio 4
+Escribir un programa que le diga al usuario que ingrese una cadena.
+El programa tiene que evaluar la cadena y decir cuantas letras mayúsculas tiene.
+"""
+print("\nEJERCICIO 4")
+def mayusculas():
+ mi_string = input("Introduzca una palabra o texto: ")
+ counter_upper=0
+ for i in mi_string:
+   if i.isupper():
+       counter_upper+=1
+ print(f"El texto {mi_string} tiene {counter_upper} palabras mayúsculas")
+#mayusculas()
+
+"""
+Ejercicio 5
+Construir un pequeño programa que convierta números binarios en enteros.
+"""
+print("\nEJERCICIO 5")
+
+def binario_a_entero():
+    vuelta = -1
+    acc=0
+    binario = input("Introduzca un número binario: ")
+    for char in reversed(binario):
+        if char.casefold()  not in "01":
+         print("Sólo se pueden introducir ceros y unos")
+         return
+        elif char=="0":            
+            vuelta +=1
+        else:
+             vuelta +=1
+             acc  += 2**vuelta
+    print(acc)
+#binario_a_entero()
+
+
+"""
+Ejercicio 6
+Escribir un pequeño programa donde:
+- Se ingresa el año en curso.
+- Se ingresa el nombre y el año de nacimiento de tres personas.
+- Se calcula cuántos años cumplirán durante el año en curso.
+- Se imprime en pantalla.
+"""
+print("\nEJERCICIO 6")
+class Persona():
+    def __init__(self,nombre,nacimiento):
+        edad = datetime.now().year - nacimiento
+        print (f"{nombre} cumplirá {edad} años en {datetime.now().year}" )
+
+persona1 = Persona("Antonio", 1980)
+persona2 = Persona("Sandra", 1996)
+persona3 = Persona("Rafael", 1942) 
+"""
+
+Ejercicio 7
+Definir una tupla con 10 edades de personas.
+Imprimir la cantidad de personas con edades superiores a 20.
+Puedes variar el ejercicio para que sea el usuario quien ingrese las edades.
+"""
+print("\nEJERCICIO 7")
+def edades_sobre_veinte():
+    edades = []
+    index = 1
+    while len(edades)<10:
+    
+        edad = input(f"Introduzca 10 edades, {index}/10:")
+        edades.append(edad)
+        index+=1
+    edades = tuple(edades)
+    edades_sobre_veinte =[]
+
+    for i in edades:
+        if int(i) > 20:
+            edades_sobre_veinte.append(i)
+    print(f"Hay {len(edades_sobre_veinte)} personas con más de 20 años")
+#edades_sobre_veinte()
+
+"""
+Ejercicio 8
+Definir una lista con un conjunto de nombres, imprimir la cantidad de comienzan con la letra a.
+También se puede hacer elegir al usuario la letra a buscar.  (Un poco mas emocionante)
+"""
+print("\nEJERCICIO 8")
+def busca_inicio_nombre():
+    lista_nombres = ["Carlos","Luis","Sandra","Pedro","Noelia","Ana","Miguel","Alvaro","Pablo","Pilar"]
+    busca_letra = input("Introduzca una letra para contar los nombres que empiezan por ella: ").upper()
+    contador =0
+    for i in lista_nombres:
+        if len(busca_letra)>1 or not busca_letra.isalpha():
+            print("Sólo se puede introducir una letra")
+            break
+        elif i.startswith(busca_letra):
+            contador+=1      
+    print(f"Hay {contador} nombres que empiezan por la letra {busca_letra}")
+#busca_inicio_nombre()
+
+
+
+"""
+Ejercicio 9
+Crear una función contar_vocales(), que reciba una palabra y cuente cuantas letras "a" tiene, cuantas letras "e" tiene y así hasta completar todas las vocales.
+Se puede hacer que el usuario sea quien elija la palabra.
+"""
+print("\nEJERCICIO 9")
+
+def contar_vocales(palabra:str):
+    va , ve , vi , vo , vu = 0, 0, 0, 0, 0
+    for char in palabra:
+        if char.casefold() in "aAáÁ":
+            va +=1
+        elif char.casefold() in "eéEÉ":
+            ve +=1
+        elif char.casefold() in "iíIÍ":
+            vi +=1
+        elif char.casefold() in "oóOÓ":
+            vo +=1
+        elif char.casefold() in "uúUÚ":
+            vu +=1
+    print(f"En el texto hay {va} letras \"A\", {ve} letras \"B\", {vi} letras \"I\", {vo} letras \"O\" y {vu} letras \"U\"")
+
+#contar_vocales("Los murciélagos salen de noche a volar por la ciudad")
+
+"""
+Ejercicio 10
+Escriba una función es_bisiesto() que determine si un año determinado es un año
+bisiesto.Un año bisiesto es divisible por 4, pero no por 100. También es divisible por 400
+"""
+print("\nEJERCICIO 10")
+def es_bisiesto(year:int):
+    if year%4 == 0 and year%100 != 0:
+        print(f"El año {year} es bisiesto")
+    else:
+        print(f"El año {year} no es bisiesto")
+es_bisiesto(1986)
+
+
+
+
+
+
+
+
+
