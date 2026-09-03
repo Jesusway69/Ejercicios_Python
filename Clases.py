@@ -1,5 +1,7 @@
-import os
-os.system('clear')
+from subprocess import run
+from platform import platform
+
+run("cls" if platform().startswith("Windows") else "clear", shell=True)
 
 
 
