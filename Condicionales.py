@@ -1,5 +1,7 @@
-import os
-os.system('clear')
+from subprocess import run
+from platform import platform
+
+run("cls" if platform().startswith("Windows") else "clear", shell=True)
 
 condicion = True
 if condicion:
@@ -7,17 +9,17 @@ if condicion:
 
 #Si aquí hay un else entra por él si condición es false y no entra al siguiente if
 
- condicion = 5*2
+ condicion = 5 * 2
 if condicion == 10:
      print ('se ejecuta la condicion del segundo if')
 
      print ("la ejecución continúa")
 
-condicion=0
-while condicion<100:
+condicion = 0
+while condicion < 100:
     print(condicion)
     condicion += 11
-    if condicion==55:
+    if condicion == 55:
      print ('hemos cortado la ejecución en', condicion)
      break
      """con break el programa finaliza al cumplirse la condición del if,
