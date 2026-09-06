@@ -1,7 +1,10 @@
 #STRINGS
-
 from operator import truediv
 from turtle import clear
+from subprocess import run
+from platform import platform
+
+run("cls" if platform().startswith("Windows") else "clear", shell=True)
 
 print ("Hello World")
 #concatenado
