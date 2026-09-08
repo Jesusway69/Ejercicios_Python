@@ -16,13 +16,16 @@ nombre = input("como te llamas? ") #Se pausa la ejecución para pedir entrada de
 print ("OK, te llamas",nombre) #Imprime la varibla que le acabamos de dar aunque ya se hubiera declarado y mostrado antes
 
 #CONVENCIONES
-book_name = "el señor de las moscas" #Snake case para valores variables (convención más admitida en python)
+book_name = "el señor de las moscas" #Snake case para valores variables (convención más admitida en Python)
 bookName = "el guardian entre el centeno" #Camel case para valores variables (no bien visto en python)
-BookName = "don quijote" # Pascal case
-BOOK_NAME = "los trapos sucios" # Screaming snake case para valores fijos o constantes de más de una palabra
-PI = 3.1416 #Valores fijos o constantes todo en mayusculas
-#book-name = "los pilares de la tierra" #kebap case (no reconocida)
+BookName = "don quijote" # Pascal case (convención para nombres de clases)
+PI = 3.1416 #Valores fijos o constantes todo en mayusculas (en Python es sólo una convención porque no respeta las constantes)
+BOOK_NAME = "los trapos sucios" # Screaming snake case para valores fijos o constantes de más de una palabra (Igual que el caso anterior)
+book-name = "los pilares de la tierra" #kebap case (no reconocida)
 l33t = "password" #Leet case para contraseñas
+print(BOOK_NAME)
+BOOK_NAME = "La lengua de las mariposas"
+print(BOOK_NAME) #Aunque VSCode nos lo muestre como constante en realidad no lo es y en Python se puede modificar su contenido
 
 # OPERADORES DE COMPARACION (siempre devuelve booleano)
 print (5==5) #IGUAL
@@ -34,6 +37,7 @@ print(225>=521) #MAYOR O IGUAL
 
 
 
+
 mi_lista = ["Miguel", "Luis", "Jose" , "Ana" , "Carmen"]
-mi_lista.append("Sara" )
+mi_lista.append("Sara")
 print(mi_lista)

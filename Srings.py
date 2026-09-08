@@ -28,21 +28,22 @@ cadena_reves=''.join(reversed(cadena))
 print(cadena_reves)
 print(type(cadena_reves))
 
-'''def invertir_cadena(cadena):
+def invertir_cadena(cadena):
+     cadena_reves = ''
      cadena="Hola mundo"
      for l in cadena:
          cadena_reves = l + cadena_reves
-         return cadena_reves
+     return cadena_reves
 
-     print (cadena_reves)
 
-invertir_cadena(cadena)'''
+print(invertir_cadena(cadena))
 
 
 nom, ape, ed = "Jesús", "Matilla", 45
 print("Mi nombre es {} {} y mi edad es {}".format(nom, ape, ed))
 print("Mi nombre es %s %s y mi edad es %d" %(nom, ape, ed))
 print("Mi nombre es " + nom + " " + ape + " y mi edad es " + str(ed))
+print("Mi nombre es " + nom + " " + ape + " y mi edad es", ed)
 print(f"Mi nombre es {nom} {ape} y mi edad es {ed}")
 
 
