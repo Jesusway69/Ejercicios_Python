@@ -1,9 +1,13 @@
-import os
-os.system('clear')
+from subprocess import run
+from platform import platform
 
-numero = int(input("numero para obtener factorial: "))
+run("cls" if platform().startswith("Windows") else "clear", shell=True)
+
+number = int(input("numero para obtener factorial: "))
 
 factorial = 1
-for i in range(1,numero +1):
+
+for i in range(1, number + 1):
     factorial = factorial * i 
-print(factorial)  
+    
+print(f"El factorial de {number} es: {factorial}\n")  
