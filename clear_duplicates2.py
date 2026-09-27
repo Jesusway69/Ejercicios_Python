@@ -71,3 +71,25 @@ if __name__ == '__main__':
     main()
 
 #Script generado por Qwen 2.5 coder 7B instruct Q4 en local en minisforum un1290 con zorinOS 18.1 
+
+"""
+Para resolver esta tarea en Python, podemos seguir los siguientes pasos:
+
+Función para listar archivos: Primero, necesitamos una función que liste todos los archivos en la carpeta de Descargas y los agrupe por tamaño.
+
+Comparación de contenido: Luego, debemos comparar el contenido de los archivos del mismo tamaño para identificar duplicados.
+
+Interfaz interactiva: Finalmente, mostraremos los grupos de duplicados y pediremos al usuario que seleccione una acción.
+
+
+Este script hace lo siguiente:
+
+calculate_hash: Calcula el hash SHA-1 de un archivo para su comparación.
+
+list_files_by_size: Lista todos los archivos en la carpeta de Descargas agrupados por tamaño y calcula su hash.
+
+display_duplicate_groups: Muestra los grupos de archivos duplicados con sus rutas y tamaños.
+
+select_action: Permite al usuario seleccionar una acción (conservar el 1, conservar el 2, borrar ambos o elegir manualmente).
+
+main: Llama a las funciones anteriores en el orden correcto para analizar los archivos, mostrar los duplicados y realizar las acciones seleccionadas."""
